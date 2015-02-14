@@ -1,0 +1,37 @@
+---
+layout: default
+---
+
+
+{% for post in site.posts | limit:1 %}
+
+<article>
+    <header>
+        <h1>{{ post.title }}</h1>
+
+        <p class=article-date>
+            <time datetime="{{ post.date | date_to_xmlschema }}"
+                itemprop="datePublished">
+                {{ post.date | date: '%A %-d %B %Y' }}
+            </time>
+    </header>
+
+    {% if post.excerpt %}
+    <p class=excerpt> {{ post.excerpt }}
+    {% endif %}
+
+    <p class=continue> »
+    <a href="{{ site.url }}{{ post.url }}"
+        >{{post.title | markdownify | strip_html}}</a>
+
+{% endfor %}
+</article>
+
+    <hr>
+
+<section class=home>
+
+    {{ content }}
+
+</section>
+

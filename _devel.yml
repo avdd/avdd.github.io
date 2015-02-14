@@ -1,0 +1,9 @@
+devel: true
+destination: /home/avdd/.cache/i.avdd.co/site
+contact:
+    url: http://localhost/~avdd/contact.php
+    #url: http://a.avdd.co/contact.php
+sass:
+    style: :expanded
+sass:
+    cache_location: /home/avdd/.cache/i.avdd.co/sass

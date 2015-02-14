@@ -1,0 +1,36 @@
+---
+layout: default
+permalink: /archive/
+title: archive
+---
+
+<section class=archive>
+
+    <header>
+        <h1>All articles</h1>
+    </header>
+
+    <ul class=article-list>
+
+        {% for post in site.posts %}
+
+        <li>
+
+            <span class=article-date>
+                <time datetime={{ post.date | date_to_xmlschema }}>
+                    {{ post.date | date: '%-d %B %Y' }}
+                </time>
+            </span>
+
+            <span class=article-title>
+                <a href={{site.url}}{{post.url}}
+                    >{{post.title|markdownify|strip_html}}</a>
+            </span>
+
+        {% endfor %}
+
+    </ul>
+
+</section>
+
+

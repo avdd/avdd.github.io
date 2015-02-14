@@ -1,0 +1,55 @@
+title:          i.avdd.co
+description:    I, avdd
+#url:           http://i.avdd.co
+
+permalink:    none
+
+timezone:     Australia/Sydney
+future:       true
+highlight:    pygments
+#markdown:    kramdown
+#markdown:    rdiscount
+markdown:     redcarpet
+markdown_ext: md,txt
+
+exclude:
+    - _config.yml
+    - _devel.yml
+    - _site
+    - Gemfile
+    - Gemfile.lock
+
+links:
+    -
+        url: /
+        label: i.avdd.co
+        title: home
+    -
+        url: /archive/
+        label: archive
+        title: all articles
+
+contact:
+    url: http://a.avdd.co/contact.php
+
+redcarpet:
+      extensions: ['smart']
+
+kramdown:
+    auto_ids: true
+    footnote_nr: 1
+    entity_output: as_char
+    toc_levels: 1..6
+    smart_quotes: lsquo,rsquo,ldquo,rdquo
+
+    use_coderay: true
+    coderay:
+        coderay_line_numbers: 
+        coderay_line_numbers_start: 1
+        coderay_tab_width: 4
+        coderay_bold_every: 10
+        coderay_css: class
+
+sass:
+    style: :compressed
+

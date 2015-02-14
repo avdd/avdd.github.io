@@ -1,0 +1,24 @@
+
+<footer class=global>
+<nav><ul>
+
+    {% for x in site.links %}
+    <li>
+        {% if page.url == x.url %}
+            <span class=current-url>{{x.label}}</span>
+        {% else %}
+            <a href={{x.url}} title="{{x.title}}">{{x.label}}</a>
+        {% endif %}
+    {% endfor %}
+
+    <li>
+    {% if page.url != '/contact/' %}
+        <a href=/contact/?{{page.url}} title="say hello" >contact</a>
+    {% else %}
+        <span class=current-url>contact</span>
+    {% endif %}
+
+</ul></nav>
+<small>&copy; {{ site.time | date: '%Y' }}</small>
+</footer>
+

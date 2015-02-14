@@ -1,0 +1,377 @@
+
+$black:         #3b3b3b;
+$white:         #f9f9f9;
+$grey-dark:     #333;
+$grey-medium:   #999;
+$grey-light:    #f3f3f3;
+$highlight:     #ffe8c0;
+$accent:        #24536b;
+$accent-light:  #8ab9d1;
+
+$mono:  "Source Code Pro", "Andale Mono", monospace;
+$sans:  "Roboto Condensed", "Helvetica Neue", "Arial", sans-serif;
+$serif: "Old Standard TT" , "Georgia", serif;
+   
+
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+
+@import "normalize";
+@import "lib";
+@import "syntax";
+
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #f3f3f3;
+    color: $black;
+    font-family: $serif;
+    font-size: 100%;
+    text-size-adjust: 100%;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    @include clearfix;
+}
+
+
+// layout
+
+.container {
+    max-width: 85ex;
+    margin: 0 auto;
+    margin-bottom: 1em;
+    padding: 0;
+    background-color: $white;
+    background: url(/etc/image/noise.jpg);
+    // opacity: 1;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 1px 1px 1px 1px #ccc;
+}
+
+// responsivenesses
+
+@media only screen and (max-width: 494px) {
+    body {
+        font-size: 0.9em;
+    }
+}
+
+@media only screen and (min-width: 495px) {
+    body {
+        font-size: 1.0em;
+    }
+}
+
+@media only screen and (min-width: 785px) {
+    body {
+        font-size: 1.2em;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 1em 0;
+    // text-shadow: 0px 2px 2px #fff;
+
+    // text-shadow: 0px 2px 2px #fff;
+    // text-shadow: 1px 1px rgba(255,255,255,0.2), -1px -1px rgba(0,0,0,0.5);
+    // text-shadow: 0 2px 2px rgba(255,255,255,0.8);
+    // color: #666;
+}
+
+h1, h3, h5 {
+    font-weight: normal;
+    font-style: italic;
+    font-family: $serif;
+}
+
+h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    font-family: $sans;
+}
+
+tt, pre, kbd, code, samp {
+    font-family: $mono;
+    font-size: 0.8em;
+}
+
+ul > li {
+    list-style-type: square;
+}
+
+header, footer {
+    text-align: center;
+}
+
+header.global, footer.global {
+    padding: 0.2ex 1ex;
+
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+    li {
+        display: inline-block;
+        padding: 0 1ex;
+    }
+    @media only screen and (max-width: 784px) {
+        li {
+            padding: 1ex;
+        }
+    }
+
+}
+
+.current-url {
+    border-radius: 4px;
+    padding: 0 0.5ex;
+    font-family: $sans;
+}
+
+div.content {
+    border-top: 1px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee;
+    padding: 0 1em;
+}
+
+a {
+    //color: inherit;
+    //text-decoration: none;
+    font-family: $sans;
+}
+
+a[href], a:visited, a:active {
+    @include transition(all, 0.25s, ease-in-out);
+    border-radius: 5px;
+    color: $accent;
+}
+
+a:hover { color: $accent-light; }
+
+strong, em {
+    font-weight: normal;
+    text-decoration: none;
+    color: $accent;
+    background: #f3f3f3; // $grey-light;
+    border-radius: 2px;
+    padding: 0 0.5ex;
+}
+
+strong {
+    font-weight: bold;
+    font-style: normal;
+}
+
+blockquote {
+    font-style: italic;
+    text-align: center;
+    color:      lighten($black, 20%);
+    margin: 2em ;
+    padding: 0 1em;
+    //border-right: 3px solid $accent-light;
+    text-align: left;
+    position: relative;
+}
+
+blockquote a,
+blockquote code
+{
+    font-style: normal;
+}
+
+blockquote:before {
+    font-size: 250%;
+    color: $accent-light;
+    content:'“';
+    position: absolute;
+    top: -0.25em;
+    left: -1ex;
+}
+
+
+p code {
+    padding: 0 4px;
+    border-radius: 3px;
+    color: $accent;
+    background: #f3f3f3; // $grey-light;
+    // border: 0.5px solid $accent;
+}
+
+
+figure > img,
+p > img {
+    display: block;
+    margin: auto;
+    max-width: 100%;
+    height: auto;
+    border: 1px solid $grey-medium;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px #ccc;
+}
+
+figure {
+    display: block;
+    text-align: center;
+    margin: 0.5em auto;
+}
+
+hr {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.continue {
+    font-family: $sans;
+}
+
+.continue a {
+    font-style: italic;
+}
+
+ul.article-list {
+    display: block;
+    padding: 0;
+}
+
+.article-list {
+    //margin-left: 1em;
+}
+
+.article-list li:first-child {
+    border: 0;
+}
+
+.article-list li {
+    display: block;
+    border-top: 1px solid #eee;
+    line-height: 1.8em;
+    list-style: none;
+    list-style-type: none;
+
+    .article-title,
+    .article-date {
+        display: table-cell;
+        margin: 0;
+        vertical-align: top;
+    }
+    .article-date {
+        width: 15em;
+        white-space: nowrap;
+        //font-size: 0.8em;
+        text-align: right;
+        @media only screen and (max-width: 600px) {
+            width: 10em;
+        }
+    }
+    .article-title {
+        padding-left: 1em;
+    }
+}
+
+article header h1 {
+    font-size: 250%;
+    margin: 0;
+}
+
+article header {
+    margin: 4em 0;
+}
+
+article .article-date {
+    font-family: $sans;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    color: $grey-medium;
+}
+
+
+.contact {
+    width: 18rem;
+    margin: 1ex auto;
+    padding-top: 1em;
+}
+
+.contact .form {
+    border: 1px solid $accent-light;
+    border-radius: 5px;
+    padding: 1ex;
+    margin: 2em 0;
+}
+
+.contact p {
+    margin: 0.5ex 0;
+}
+
+.contact .label {
+    font-style: italic;
+    font-size: 0.9em;
+}
+
+.contact input,
+.contact textarea {
+    font-family: $mono;
+    color: $accent;
+    padding: 0.5ex;
+    width: 16rem;
+    font-size: 0.8em;
+}
+.contact textarea {
+    height: 10rem;
+}
+
+.contact button {
+    font-family: $sans;
+    padding: 0 1ex;
+    width: 3em;
+}
+
+.contact form.waiting button,
+.contact form.submitted button {
+    color: $grey-medium;
+}
+
+.contact-expired .expire {
+    color: $accent;
+}
+
+.contact-expired form button {
+    display: none;
+}
+
+.contact p.input {
+    padding: 0 0 1ex 0;
+}
+
+.contact .notice {
+    font-weight: bold;
+    font-size: 0.8em;
+    color: $accent;
+    padding-left: 1ex;
+}
+
+.responded .response {
+    display: block;
+}
+
+.responded .preamble,
+.responded .form {
+    display: none;
+}
+
+.response {
+    text-align: center;
+    padding-bottom: 5em;
+    display: none;
+}
+
+.response p:first-child {
+    padding-bottom: 2em;
+}
+

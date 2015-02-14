@@ -1,0 +1,49 @@
+---
+layout: default
+permalink: /contact/
+title: Contact me
+---
+
+<div class=contact>
+
+<noscript>
+    <p>Javascript is required to use this feature
+</noscript>
+
+<form style=display:none>
+
+<header class=preamble>
+    <p> Please send me a nice message.
+    <p> <small class=expire></small>
+</header>
+
+<section class=form>
+    <p class=label> Your message:
+    <p class=input> <textarea name=message></textarea>
+
+    <p class=label> Your name:
+    <p class=input> <input name=name>
+
+    <p class=label> Contact information (optional):
+    <p class=input> <input name=contact>
+
+    <p class=action>
+        <button type=submit name=submit>Send</button>
+        <span class=notice></span>
+</section>
+
+<footer class=response>
+    <p> Thanks!  Have a cookie:
+    <p> <img src=/etc/image/cookie-s.jpg>
+    <p> credit: <a href=https://flic.kr/p/8JKg5k>Ly. H.</a>
+</footer>
+
+</form>
+</div>
+
+
+<script src={{site.url}}/etc/contact.js></script>
+<script>
+initContactForm(document.forms[0], '{{site.contact.url}}');
+</script>
+

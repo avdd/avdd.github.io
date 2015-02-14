@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang=en>
+<meta charset=utf-8>
+<title>
+    {% if page.title %} {{ page.title }} &#8211; {% endif %}
+    {{ site.title }}
+</title>
+
+{% include meta.html %}
+
+<body>
+
+<div class=container>
+{% include header.html %}
+    <div class=content>
+    {{ content }}
+    </div>
+{% include footer.html %}
+</div>
+

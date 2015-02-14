@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+<section class=article>
+<article>
+    <header class=article-header>
+
+        <h1>{{ page.title | markdownify | strip_html }}</h1>
+
+        {% if page.date %}
+        <p class=article-date>
+            {{ page.date | date: '%A %-d %B %Y' }}
+        {% endif %}
+
+    </header>
+
+    {{ content }}
+
+</article>
+</section>
+

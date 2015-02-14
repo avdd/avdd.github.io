@@ -1,0 +1,12 @@
+---
+# vim: ft=markdown
+layout: home
+permalink: /
+---
+
+## About
+
+Another unread <strike>blight</strike> blog on the internets.
+
+* [github](http://github.com/avdd).
+
